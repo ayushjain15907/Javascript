@@ -1,4 +1,3 @@
-/* var is not having block scope which should be   so avoid var*/
 /* let and const having block scope its good thing  */
 
 

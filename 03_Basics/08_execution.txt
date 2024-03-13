@@ -1,0 +1,66 @@
+The global execution context of node environment and browser is different , Java script is single threading,
+
+Types of execution context 
+1. global execution context(this)
+2. functional execution context 
+3. eval execution context
+In the Browser the value of this(global execution context) is window object   */
+
+Execution of javascript code
+//there are two  phases 
+
+Global execution context (this) is made for every javascript code   
+1. Memory creation phase:- in this phase only memory allocation is done.
+2. execution Phase:-  
+
+Example :- 
+
+let val1=10
+let val2=5
+functionaddNum(num1,num2)
+{
+    return num1+num2
+}
+let result1=addNum(val1,val2)
+let result2=addNum(10,2)
+
+
+1. Global execution-> this 
+2. Memory creeation phase
+    
+    val1->undefined
+    val2->undefined
+    addNum->undefined
+    result1->undefined
+    result2->undefined
+
+3. Execution Phase
+
+    val1->10
+    val2->5
+    result1->addNum(val1,val2)-> a new execution context will be made (a box ) in this 2 things will be made 1st 
+    is new variable environment and 2nd is execution thread
+NOTE:- whenever the function called every time a new executional context will be made in this executional conrext the global context(this ) will not be made ist just one time made for the whole code 
+so for every time function called a new executional context will be made in which 2 phases will be there memoery 
+creation phase and the execution phase
+
+        Memory Phase:-
+            val1->undefined
+            val2->undefined
+            total->undefined
+        
+        execution Phase:-
+            num1->10
+            num2->5
+            total->15
+            then total is returned to global execution context then the newly made execution context will be deleted
+
+    result1->15
+    result2->addnNum(10,2)-> again a newly execution context will be made and same thing happend here 
+    
+    // After the both phase for new execution context and then delete also that newly execution context 
+    result2->12
+
+
+        
+
